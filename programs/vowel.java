@@ -1,34 +1,23 @@
 import java.util.Scanner;
 class Vowel
 {
-   public static void main()
+   public static void main() throws Exception
    {
-	boolean isVowel=false;;
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Enter a character : ");
 	char ch=sc.next().charAt(0); 
-	sc.close();
-	switch(ch)
-	{
-	   case 'a' :
-	   case 'e' :
-    	   case 'i' :
-	   case 'o' :
-	   case 'u' :
-	   case 'A' :
-	   case 'E' :
-	   case 'I' :
-	   case 'O' :
-	   case 'U' : isVowel = true;
-	}
-	if(isVowel == true) {
-	   System.out.println(ch+" is  a Vowel");
-	}
-	else {
-	   if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
-		System.out.println(ch+" is a Consonant");
-	   else
-		System.out.println("Input is not an alphabet");		
-        }
-   }
+	
+    char ch=Character.toUpperCase(ch);
+    if(ch == 'A'||ch == 'E'||ch == 'I'||ch == 'O'||ch =='U') 
+       System.out.println("It is a Vowel");
+	
+    else if((ch != 'A'||ch != 'E'||ch != 'I'||ch != 'O'||ch != 'U')&& Character.isLetter(ch)==true)
+        System.out.println("It is a Consonant.");
+    else 
+        System.out.println("It is a Special Character.");
+	
+	
+	
+
+    }   
 }
